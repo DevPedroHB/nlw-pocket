@@ -1,4 +1,4 @@
-import { dayjs } from "@/libs/dayjs";
+import dayjs from "dayjs";
 import { db } from "drizzle";
 import { and, count, eq, gte, lte, sql } from "drizzle-orm";
 import { goalCompletions, goals } from "drizzle/schema";
