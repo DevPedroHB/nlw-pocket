@@ -1,8 +1,9 @@
 import { CreateGoal } from "@/components/create-goal";
 import { Progress, ProgressIndicator } from "@/components/ui/progress-bar";
 import { Separator } from "@/components/ui/separator";
-import { dayjs } from "@/libs/dayjs";
+import { formatDate } from "@/functions/format-date";
 import type { WeekSummary } from "@/types/week-summary";
+import { endOfWeek, startOfWeek } from "date-fns";
 import { CheckCircle2 } from "lucide-react";
 import { PendingGoals } from "./pending-goals";
 
@@ -11,8 +12,9 @@ interface IWeeklySummary {
 }
 
 export function WeeklySummary({ summary }: IWeeklySummary) {
-	const firstDayWeek = dayjs().startOf("week").format("D MMM");
-	const lastDayOfWeek = dayjs().endOf("week").format("D MMM");
+	const currentDate = new Date();
+	const firstDayWeek = formatDate(startOfWeek(currentDate), "d MMM");
+	const lastDayOfWeek = formatDate(endOfWeek(currentDate), "d MMM");
 	const completedPercentage = Math.round(
 		(summary.completed * 100) / summary.total,
 	);
@@ -48,8 +50,8 @@ export function WeeklySummary({ summary }: IWeeklySummary) {
 				<h2 className="text-xl font-medium">Sua semana</h2>
 				{summary.goalsPerDay &&
 					Object.entries(summary.goalsPerDay).map(([key, value]) => {
-						const weekDay = dayjs(key).format("dddd");
-						const formattedDate = dayjs(key).format("D [de] MMMM");
+						const weekDay = formatDate(key, "eeee");
+						const formattedDate = formatDate(key, "d 'de' MMMM");
 
 						return (
 							<div key={key} className="flex flex-col gap-4">
@@ -61,7 +63,7 @@ export function WeeklySummary({ summary }: IWeeklySummary) {
 								</h3>
 								<ul className="flex flex-col gap-3">
 									{value.map((goal) => {
-										const time = dayjs(goal.completedAt).format("HH:mm");
+										const time = formatDate(goal.completedAt, "HH:mm");
 
 										return (
 											<li key={goal.id} className="flex items-center gap-2">
