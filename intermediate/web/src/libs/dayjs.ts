@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
-import ptBR from "dayjs/locale/pt-BR";
+import "dayjs/locale/pt-BR";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 
-dayjs.locale(ptBR);
+dayjs.locale("pt-BR");
 
 dayjs.extend(weekOfYear);
 
