@@ -1,10 +1,13 @@
 import { CreateGoal } from "@/components/create-goal";
 import { Progress, ProgressIndicator } from "@/components/ui/progress-bar";
 import { Separator } from "@/components/ui/separator";
-import dayjs from "@/libs/dayjs";
 import type { WeekSummary } from "@/types/week-summary";
+import dayjs from "dayjs";
+import ptBR from "dayjs/locale/pt-BR";
 import { CheckCircle2 } from "lucide-react";
 import { PendingGoals } from "./pending-goals";
+
+dayjs.locale(ptBR);
 
 interface IWeeklySummary {
 	summary: WeekSummary;
