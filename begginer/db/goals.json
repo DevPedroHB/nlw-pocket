@@ -1,0 +1,34 @@
+[
+  {
+    "checked": true,
+    "value": "Acordar cedo"
+  },
+  {
+    "checked": false,
+    "value": "Fazer exercícios"
+  },
+  {
+    "checked": true,
+    "value": "Ler 20 páginas de um livro"
+  },
+  {
+    "checked": false,
+    "value": "Estudar programação por 2 horas"
+  },
+  {
+    "checked": true,
+    "value": "Beber 2 litros de água"
+  },
+  {
+    "checked": false,
+    "value": "Organizar o espaço de trabalho"
+  },
+  {
+    "checked": true,
+    "value": "Meditar por 10 minutos"
+  },
+  {
+    "checked": false,
+    "value": "Planejar o dia seguinte"
+  }
+]
