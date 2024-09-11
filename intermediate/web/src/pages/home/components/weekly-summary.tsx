@@ -1,7 +1,7 @@
 import { CreateGoal } from "@/components/create-goal";
 import { Progress, ProgressIndicator } from "@/components/ui/progress-bar";
 import { Separator } from "@/components/ui/separator";
-import { dayjs } from "@/libs/dayjs";
+import dayjs from "@/libs/dayjs";
 import type { WeekSummary } from "@/types/week-summary";
 import { CheckCircle2 } from "lucide-react";
 import { PendingGoals } from "./pending-goals";
